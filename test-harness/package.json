@@ -1,0 +1,20 @@
+{
+  "name": "test-harness",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "vaterite":"cd ../vaterite && npm run bulild:link && cd ../test-harness && npm link vaterite",
+    "vaterite-mysql":"cd ../vaterite-mysql && npm run bulild:link && cd ../test-harness && npm link vaterite-mysql",
+    "build": "npm run vaterite && npm run vaterite-mysql",
+    "start":"node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-sql-parser": "^1.4.1",
+    "vaterite": "^1.0.0",
+    "vaterite-mysql": "^1.0.0"
+  }
+}

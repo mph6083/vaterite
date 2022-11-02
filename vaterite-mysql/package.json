@@ -1,0 +1,22 @@
+{
+  "name": "vaterite-mysql",
+  "version": "1.0.1",
+  "description": "MySQL adapter for vaterite",
+  "main": "dist/vaterite-mysql.js",
+  "types": "dist/vaterite-mysql.d.ts",
+  "keywords": ["vaterite","mysql"],
+  "scripts": {
+    "build": "tsc",
+    "bulild:link" :" npm run build && npm link",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Hyland",
+  "license": "MIT",
+  "peerDependencies": {
+    "vaterite": "^1.0.0"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "typescript": "^4.8.4"
+  }
+}
