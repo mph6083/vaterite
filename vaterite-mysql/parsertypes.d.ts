@@ -1,19 +1,9 @@
 declare module 'js-sql-parser'{
     export class Parser{
-        static parse(query: string): SQLResponse;
-        static stringify(SQL:SQLResponse):string;
+        static parse(query: string): any;
+        static stringify(SQL:any):string;
     };
-    export interface SQLquery {
-        type: string;
-        selectItems?: SelectItems;
-        from: From;
-        where?: Where;
-    }
-    export interface SQLResponse {
-        nodeType: string;
-        value: SQLquery;
-        hasSemicolon: boolean;
-    }
+
 }
 
 

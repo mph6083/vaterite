@@ -1,12 +1,12 @@
 {
-  "name": "vaterite-mysql",
+  "name": "vaterite-postgres",
   "version": "1.0.1",
-  "description": "MySQL adapter for vaterite",
-  "main": "dist/vaterite-mysql.js",
-  "types": "dist/vaterite-mysql.d.ts",
+  "description": "Postgres adapter for vaterite",
+  "main": "dist/vaterite-postgres.js",
+  "types": "dist/vaterite-postgres.d.ts",
   "keywords": [
     "vaterite",
-    "mysql"
+    "postgres"
   ],
   "scripts": {
     "build": "tsc",
@@ -19,11 +19,11 @@
     "vaterite": "^1.0.1"
   },
   "devDependencies": {
-    "@types/mysql": "^2.15.21",
+    "@types/pg": "^8.6.5",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "js-sql-parser": "^1.4.1",
-    "mysql": "^2.18.1"
+    "pg": "^8.8.0"
   }
 }

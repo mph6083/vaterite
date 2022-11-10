@@ -1,8 +1,7 @@
 import { Capabilities, VateritePlugin } from "vaterite";
 import { Parser } from "js-sql-parser"
-import {promisify} from "util";
-import mysql from "mysql";
-export class VateriteMysql implements VateritePlugin{
+import { Pool, Client } from "pg";
+export class VateritePostgres implements VateritePlugin{
 
     constructor(){
         //this.capabilities.add(Capabilities.FILTER);
@@ -11,10 +10,11 @@ export class VateriteMysql implements VateritePlugin{
     }
     async execQuery(query: any) {
         const querystring = Parser.stringify(query);
-        let con = mysql.createConnection(this.connectionObject);
-        const querya = promisify(con.query).bind(con);
-        let x = await querya(querystring);
-        return x;
+        const client = new Client(this.connectionObject);
+        await client.connect();
+        let response = await client.query(querystring);
+        await client.end()
+        return response;
     }
     getCapabilities(): Set<Capabilities> {
         return this.capabilities;

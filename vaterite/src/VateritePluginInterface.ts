@@ -3,18 +3,13 @@ export interface VateritePlugin{
     capabilities: Set<Capabilities>;
     connectionObject:Object;
 
-    Scan():Object;
-
-    Project():Object;
-    Filter():Object;
-    Join():Object;
+    execQuery(query:any):Promise<any>;
+    getCapabilities():Set<Capabilities>;
 }
 
 
 export enum Capabilities{
-    SCAN,
     PROJECT,
     FILTER,
     JOIN,
-
 }
