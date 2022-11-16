@@ -18,5 +18,8 @@ var connection = {
         user: 'me',
         password: 'secret',
         database: 'my_db'
+    },
+    postgres: {
+
     }
 }
